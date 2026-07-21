@@ -1,0 +1,586 @@
+/*=========================================GOOGLE FONTS=========================================*/
+/* tipografia de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================VARIABLES=========================================*/
+
+:root {
+    /*================= PALETA DE COLORES=================*/
+    --principal: #2563eb;
+    /* Color principal del sitio */
+    --secundario: #3b82f6;
+    /* Color secundario */
+    --claro: #ffffff;
+    /* Color blanco */
+    --texto: #d1d5db;
+    /* Color para textos secundarios */
+    --gris: #1e293b;
+    /* Color gris oscuro */
+    --fondo: #0f172a;
+    /* Color de fondo principal */
+    --fondo2: #111827;
+    /* Segundo color de fondo */
+
+}
+
+/*=========================================parte principal=========================================*/
+* {
+    margin: 0;
+    /* Elimina el margen por defecto */
+    padding: 0;
+    /* Elimina el relleno por defecto */
+    box-sizing: border-box;
+    /* Incluye padding y borde dentro del tamaño */
+    font-family: 'Poppins', sans-serif;
+    /* Aplica la fuente Poppins */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Hace que el desplazamiento sea suave */
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url("img/fondo-sobre-mi.png");
+    /* Aplica un degradado sobre la imagen de fondo */
+    background-size: cover;
+    /* La imagen de fondo cubre todo el contenedor */
+    background-position: center;
+    /* Centra la imagen de fondo */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    background-attachment: fixed;
+    /* La imagen de fondo permanece fija al hacer scroll */
+    color: var(--claro);
+    /* Aplica el color del texto */
+}
+
+img {
+
+    max-width: 100%;
+    /* La imagen nunca será más ancha que su contenedor */
+    display: block;
+    /* Elimina espacios debajo de la imagen */
+
+}
+
+a {
+    text-decoration: none;
+    /* Quita el subrayado de los enlaces */
+}
+
+ul {
+    list-style: none;
+    /* Elimina los puntos de las listas */
+}
+
+/*=================HEADER=================*/
+header {
+    backdrop-filter: blur(15px);
+    width: 100%;
+    /* Ocupa todo el ancho de la pantalla */
+    height: 85px;
+    /* Altura del encabezado */
+    display: flex;
+    /* Activa Flexbox */
+    justify-content: space-between;
+    /* Separa logo y menú */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    padding: 0 8%;
+    /* Espacio interno a los lados */
+    background: #0b1120a2;
+    /* Color de fondo */
+    position: fixed;
+    /* El header permanece fijo */
+    top: 0;
+    /* Lo coloca arriba */
+    left: 0;
+    /* Pegado al borde izquierdo */
+    z-index: 999;
+    /*orden de apilamiento*/
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .35);
+    /* Agrega una sombra */
+}
+
+/*=================LOGO=================*/
+.logo a {
+    color: white;
+    /* Color del texto */
+    font-size: 1.8rem;
+    /* Tamaño de la letra */
+    font-weight: 700;
+    /* Hace la letra más gruesa */
+}
+
+.logo a span {
+    color: var(--principal);
+    /* Cambia el color del texto dentro del span */
+}
+
+/*=================MENU=================*/
+nav ul {
+    display: flex;
+    /* Coloca los elementos en fila */
+    gap: 35px;
+    /* Espacio entre cada opción del menú */
+}
+
+nav ul li a {
+    color: white;
+    /* Color del enlace */
+    font-weight: 500;
+    /* Grosor medio de la letra */
+    transition: .3s;
+    /* Hace suave el cambio de color */
+    position: relative;
+    /* Permite posicionar el ::after */
+}
+
+nav ul li a:hover {
+    color: var(--principal);
+    /* Cambia el color al pasar el mouse */
+}
+
+nav ul li a::after {
+    content: "";
+    /* Crea un elemento vacío */
+    position: absolute;
+    /* Lo posiciona respecto al enlace */
+    left: 0;
+    /* Empieza desde la izquierda */
+    bottom: -6px;
+    /* Lo coloca debajo del texto */
+    width: 0;
+    /* Inicialmente no se ve */
+    height: 2px;
+    /* Grosor de la línea */
+    background: var(--principal);
+    /* Color de la línea */
+    transition: .3s;
+    /* Hace suave la animación */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    /* Hace que la línea aparezca completamente */
+}
+
+.active {
+    color: var(--principal);
+    /* Marca el enlace activo */
+}
+
+/*=================MENU HAMBURGUESA=================*/
+#menu {
+    display: none;
+    /* Oculta el checkbox */
+}
+
+.menu-icon {
+    display: none;
+    /* Oculta el icono en computadoras */
+    font-size: 30px;
+    /* Tamaño del icono */
+    color: white;
+    /* Color del icono */
+    cursor: pointer;
+    /* Cambia el cursor a una mano */
+}
+/*=========================================CURRÍCULO GLASSMORPHISM=========================================*/
+
+.curriculo {
+
+    padding: 140px 8% 100px;
+}
+
+/*==========================TITULO=========================*/
+
+.titulo-cv {
+    margin: 20px;
+    padding: 60px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo-cv h1 {
+
+    font-size: 55px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.titulo-cv p {
+
+    color: #d1d5db;
+}
+
+/*==========================TARJETA PRINCIPAL==========================*/
+
+.cv-principal {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .35);
+    transition: .4s;
+}
+
+.cv-principal:hover {
+
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(37, 99, 235, .30);
+}
+
+.cv-info {
+
+    flex: 1;
+}
+
+.cv-info h2 {
+
+    font-size: 42px;
+    color: #fff;
+}
+
+.cv-info h3 {
+
+    color: #3b82f6;
+    margin: 10px 0 20px;
+}
+
+.cv-info p {
+
+    color: #d1d5db;
+    line-height: 1.8;
+}
+
+.cv-foto {
+
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(59, 130, 246, .5);
+    box-shadow: 0 0 25px rgba(59, 130, 246, .45);
+}
+
+.cv-foto img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*==========================GRID==========================*/
+
+.cv-grid {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+/*==========================TARJETAS==========================*/
+
+.cv-card {
+
+    padding: 35px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .30);
+    transition: .4s;
+}
+
+.cv-card:hover {
+
+    transform: translateY(-10px);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 45px rgba(59, 130, 246, .35);
+}
+
+.cv-card h2 {
+
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.cv-card h2::after {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 60px;
+    height: 3px;
+    background: #3b82f6;
+}
+
+/*==========================INFORMACIÓN SKILL==========================*/
+
+.skill-info {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skill-info span {
+
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.skill-info span:last-child {
+
+    color: #60a5fa;
+    font-weight: 700;
+}
+.skill {
+
+    margin-bottom: 22px;
+}
+
+.skill span {
+
+    color: #fff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.barra {
+
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, .12);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.progreso {
+
+    height: 100%;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    box-shadow: 0 0 15px rgba(59, 130, 246, .6);
+}
+
+/*==========================LISTAS=========================*/
+
+.cv-card ul {
+
+    list-style: none;
+}
+
+.cv-card li {
+
+    color: #d1d5db;
+    margin-bottom: 15px;
+    line-height: 1.7;
+    padding-left: 18px;
+    position: relative;
+}
+
+.cv-card li::before {
+
+    content: "●";
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+}
+
+/*==========================BOTON==========================*/
+
+.cv-btn {
+
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cv-btn a {
+
+    display: inline-block;
+    padding: 16px 40px;
+    margin: 20px;
+    border-radius: 50px;
+    color: #fff;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transition: .4s;
+    font-weight: 600;
+}
+
+.cv-btn a:hover {
+
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, .45);
+}
+
+/*=========================================FOOTER========================================*/
+
+footer {
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .4s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+    /* Define el color de fondo del pie de página */
+    padding: 45px 8%;
+    /* Agrega espacio interno arriba/abajo y a los lados */
+    text-align: center;
+    /* Centra todo el contenido del footer */
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+footer p {
+
+    color: var(--texto);
+    /* Color del párrafo */
+    margin-bottom: 25px;
+    /* Espacio debajo del párrafo */
+}
+
+.redes {
+
+    display: flex;
+    /* Activa Flexbox */
+    justify-content: center;
+    /* Centra los íconos horizontalmente */
+    gap: 25px;
+    /* Espacio entre los íconos */
+    flex-wrap: wrap;
+    /* Permite que los íconos bajen a otra línea si no caben */
+}
+
+.redes a {
+
+    color: white;
+    /* Color de los íconos */
+    transition: .3s;
+    /* Suaviza el cambio de color */
+}
+
+.redes a:hover {
+
+    color: var(--principal);
+    /* Cambia el color de los íconos al pasar el cursor */
+}
+
+.btn-arriba {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    background: var(--principal);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/*=========================================
+        RESPONSIVE CELULAR
+=========================================*/
+
+@media(max-width:768px) {
+    /* Estas reglas se aplican cuando la pantalla mide 768px o menos */
+
+    .menu-icon {
+
+        display: block;
+        /* Muestra el ícono del menú hamburguesa */
+    }
+
+    nav {
+
+        position: absolute;
+        /* Posiciona el menú respecto al header */
+        top: 85px;
+        /* Lo coloca debajo del encabezado */
+        left: 0;
+        /* Lo pega al borde izquierdo */
+        width: 100%;
+        /* Hace que ocupe todo el ancho */
+        background: #0b1120;
+        /* Color de fondo del menú */
+        max-height: 0;
+        /* Inicialmente el menú está cerrado */
+        overflow: hidden;
+        /* Oculta el contenido que sobresale */
+        transition: .4s;
+        /* Hace suave la apertura del menú */
+    }
+
+    nav ul {
+
+        flex-direction: column;
+        /* Coloca las opciones una debajo de otra */
+        text-align: center;
+        /* Centra el texto */
+        gap: 0;
+        /* Elimina la separación entre elementos */
+    }
+
+    nav ul li {
+
+        padding: 18px 0;
+        /* Espacio interno arriba y abajo */
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        /* Agrega una línea divisoria */
+    }
+
+    #menu:checked~nav {
+
+        max-height: 500px;
+        /* Expande el menú cuando el checkbox está marcado */
+    }
+}
+
+@media(max-width:992px) {
+
+    .cv-principal {
+
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .cv-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .titulo-cv h1 {
+
+        font-size: 38px;
+    }
+
+    .cv-info h2 {
+
+        font-size: 30px;
+    }
+
+    .cv-card {
+
+        padding: 25px;
+    }
+}

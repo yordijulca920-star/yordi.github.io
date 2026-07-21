@@ -1,0 +1,565 @@
+/*=========================================
+    GOOGLE FONTS
+=========================================*/
+/* tipografia de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================VARIABLES=========================================*/
+:root {
+    /*================= PALETA DE COLORES=================*/
+    --principal: #2563eb;
+    /* Color principal del sitio */
+    --secundario: #3b82f6;
+    /* Color secundario */
+    --claro: #ffffff;
+    /* Color blanco */
+    --texto: #d1d5db;
+    /* Color para textos secundarios */
+    --gris: #1e293b;
+    /* Color gris oscuro */
+    --fondo: #0f172a;
+    /* Color de fondo principal */
+    --fondo2: #111827;
+    /* Segundo color de fondo */
+
+}
+
+/*=========================================parte principal=========================================*/
+* {
+    margin: 0;
+    /* Elimina el margen por defecto */
+    box-sizing: border-box;
+    /* Incluye padding y borde dentro del tamaño */
+    font-family: 'Poppins', sans-serif;
+    /* Aplica la fuente Poppins */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Hace que el desplazamiento sea suave */
+}
+
+body {
+    background: linear-gradient(rgba(8, 12, 30, .65), rgba(8, 12, 30, .75)), url("img/fondo-sobre-mi.png");
+        /* Aplica un degradado sobre la imagen de fondo */
+    background-size: cover;
+        /* La imagen de fondo cubre todo el contenedor */
+    background-position: center;
+        /* Centra la imagen de fondo */
+    background-repeat: no-repeat;
+        /* Evita que la imagen se repita */
+    background-attachment: fixed;
+        /* La imagen de fondo permanece fija al hacer scroll */
+    color: var(--claro);
+    /* Aplica el color del texto */
+}
+
+img {
+    max-width: 100%;
+    /* La imagen nunca será más ancha que su contenedor */
+    display: block;
+    /* Elimina espacios debajo de la imagen */
+
+}
+
+a {
+    text-decoration: none;
+    /* Quita el subrayado de los enlaces */
+}
+
+ul {
+    list-style: none;
+    /* Elimina los puntos de las listas */
+}
+
+/*=================HEADER=================*/
+header {
+    backdrop-filter: blur(15px);
+    width: 100%;
+    /* Ocupa todo el ancho de la pantalla */
+    height: 85px;
+    /* Altura del encabezado */
+    display: flex;
+    /* Activa Flexbox */
+    justify-content: space-between;
+    /* Separa logo y menú */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    padding: 0 8%;
+    /* Espacio interno a los lados */
+    background: #0b1120a2;
+    /* Color de fondo */
+    position: fixed;
+    /* El header permanece fijo */
+    top: 0;
+    /* Lo coloca arriba */
+    left: 0;
+    /* Pegado al borde izquierdo */
+    z-index: 999;
+    /*orden de apilamiento*/
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .35);
+    /* Agrega una sombra */
+}
+
+/*=================LOGO=================*/
+.logo a {
+    color: white;
+    /* Color del texto */
+    font-size: 1.8rem;
+    /* Tamaño de la letra */
+    font-weight: 700;
+    /* Hace la letra más gruesa */
+}
+
+.logo a span {
+    color: var(--principal);
+    /* Cambia el color del texto dentro del span */
+}
+
+/*=================MENU=================*/
+nav ul {
+    display: flex;
+    /* Coloca los elementos en fila */
+    gap: 35px;
+    /* Espacio entre cada opción del menú */
+}
+
+nav ul li a {
+    color: white;
+    /* Color del enlace */
+    font-weight: 500;
+    /* Grosor medio de la letra */
+    transition: .3s;
+    /* Hace suave el cambio de color */
+    position: relative;
+    /* Permite posicionar el ::after */
+}
+
+nav ul li a:hover {
+    color: var(--principal);
+    /* Cambia el color al pasar el mouse */
+}
+
+nav ul li a::after {
+    content: "";
+    /* Crea un elemento vacío */
+    position: absolute;
+    /* Lo posiciona respecto al enlace */
+    left: 0;
+    /* Empieza desde la izquierda */
+    bottom: -6px;
+    /* Lo coloca debajo del texto */
+    width: 0;
+    /* Inicialmente no se ve */
+    height: 2px;
+    /* Grosor de la línea */
+    background: var(--principal);
+    /* Color de la línea */
+    transition: .3s;
+    /* Hace suave la animación */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    /* Hace que la línea aparezca completamente */
+}
+
+.active {
+    color: var(--principal);
+    /* Marca el enlace activo */
+}
+
+/*=================MENU HAMBURGUESA=================*/
+#menu {
+    display: none;
+    /* Oculta el checkbox */
+}
+
+.menu-icon {
+    display: none;
+    /* Oculta el icono en computadoras */
+    font-size: 30px;
+    /* Tamaño del icono */
+    color: white;
+    /* Color del icono */
+    cursor: pointer;
+    /* Cambia el cursor a una mano */
+}
+/*=========================================TÍTULO DE LA PÁGINA=========================================*/
+
+.titulo-todo { /*=========con efecto glassmorphism=========*/
+
+    max-width: 1200px;
+    margin: 140px auto 80px;
+    padding: 60px;
+    text-align: center;
+    background: rgba(255, 255, 255, .08);/*=========con efecto glassmorphism=========*/
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    transition: .4s;
+    }
+    .titulo-todo:hover{
+    transform: translateY(-8px);        
+    box-shadow: 0 20px 45px rgba(37, 99, 235, .30);
+    }
+
+/*=========================================SOBRE MI=========================================*/
+
+.sobre-texto {
+
+    max-width: 850px;
+    margin: auto;
+}
+
+.sobre-texto h2 {
+
+    font-size: 42px;
+    margin-bottom: 25px;
+    color: var(--principal);
+}
+
+.sobre-texto p {
+
+    color: var(--texto);
+    line-height: 2;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/*=========================================Lenguajes y Herramientas=========================================*/
+
+.habilidades { /*=========con efecto glassmorphism=========*/
+
+padding: 100px 8%;
+background: rgba(255, 255, 255, .04);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+}
+
+.habilidades h2 {
+
+    text-align: center;
+    /* Centra el título horizontalmente */
+    font-size: 40px;
+    /* Tamaño del título */
+    margin-bottom: 60px;
+    /* Espacio debajo del título */
+
+}
+
+.contenedor-habilidades {
+
+    display: grid;
+    /* Activa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    /* Crea columnas automáticas y adaptables */
+    gap: 30px;
+    /* Espacio entre las tarjetas */
+}
+
+.card {
+
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);/*filtro de capa para ayudar a que se vea mejor el efecto*/
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
+    transition: .4s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+}
+
+.card:hover {/*efectos o mejoras*/
+
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, .12);
+    border-color: rgba(37, 99, 235, .6);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, .25);
+}
+
+.card h3 {
+
+    font-size: 24px;
+    /* Tamaño del título */
+    color: var(--principal);
+    /* Color del título */
+    margin-bottom: 15px;
+    /* Espacio debajo del título */
+}
+
+.card p {
+
+    color: var(--texto);
+    /* Color del párrafo */
+    line-height: 1.7;
+    /* Espaciado entre líneas */
+}
+/*=========================================HABILIDADES DESTACADAS=========================================*/
+
+.habilidades-destacadas {
+
+    padding: 90px 8%;
+}
+
+.habilidades-destacadas h2 {
+
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+/*========================================PROYECTOS=========================================*/
+
+.proyectos {
+
+    padding: 100px 8%;
+    /* Agrega espacio interno arriba/abajo y a los lados */
+}
+
+.proyectos h2 {
+
+    text-align: center;
+    /* Centra el título horizontalmente */
+    font-size: 40px;
+    /* Tamaño del título */
+    margin-bottom: 60px;
+    /* Espacio debajo del título */
+}
+
+.contenedor-proyectos {
+
+    display: grid;
+    /* Activa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*numero y ancho de columnas*/
+    /* Crea columnas automáticamente */
+    gap: 35px;
+    /* Espacio entre los proyectos */
+}
+
+.proyecto {
+background: rgba(255, 255, 255, .08);
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+border: 1px solid rgba(255, 255, 255, .15);
+border-radius: 20px;
+overflow: hidden;/*comportamiento horizontal*/
+transition: .4s;
+box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+}
+
+.proyecto:hover {
+
+    transform: translateY(-10px);
+    border-color: var(--principal);
+    box-shadow: 0 0 25px rgba(37, 99, 235, .35);
+}
+
+.imagen {
+
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+.proyecto h3 {
+
+    font-size: 25px;
+    /* Tamaño del título */
+    margin: 20px;
+    /* Espacio alrededor del título */
+}
+
+.proyecto p {
+
+    color: var(--texto);
+    /* Color del párrafo */
+    margin: 0 20px 25px;
+    /* Margen: arriba 0, lados 20px, abajo 25px */
+    line-height: 1.8;
+    /* Espaciado entre líneas */
+}
+
+.proyecto a {
+
+    display: inline-block;
+    /* Permite aplicar tamaño y márgenes al enlace */
+    margin: 0 20px 25px;
+    /* Margen del botón */
+    background: var(--principal);
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    padding: 12px 28px;
+    /* Espacio interno */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    transition: .3s;
+    /* Suaviza el cambio de color */
+}
+
+.proyecto a:hover {
+
+    background: #1d4ed8;
+    /* Cambia el color del botón al pasar el cursor */
+    color: white;
+    /* Cambia el color del texto al pasar el cursor */
+}
+
+/*=========================================FOOTER=========================================*/
+
+footer {
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .4s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+    /* Define el color de fondo del pie de página */
+    padding: 45px 8%;
+    /* Agrega espacio interno arriba/abajo y a los lados */
+    text-align: center;
+    /* Centra todo el contenido del footer */
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+footer p {
+
+    color: var(--texto);
+    /* Color del párrafo */
+    margin-bottom: 25px;
+    /* Espacio debajo del párrafo */
+}
+
+.redes {
+
+    display: flex;
+    /* Activa Flexbox */
+    justify-content: center;
+    /* Centra los íconos horizontalmente */
+    gap: 25px;
+    /* Espacio entre los íconos */
+    flex-wrap: wrap;
+    /* Permite que los íconos bajen a otra línea si no caben */
+}
+
+.redes a {
+
+    color: white;
+    /* Color de los íconos */
+    transition: .3s;
+    /* Suaviza el cambio de color */
+}
+
+.redes a:hover {
+
+    color: var(--principal);
+    /* Cambia el color de los íconos al pasar el cursor */
+}
+.btn-arriba {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    background: var(--principal);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+/*=========================================RESPONSIVE TABLET=========================================*/
+
+@media(max-width:992px) {/* Estas reglas se aplican cuando la pantalla mide 992px o menos */
+
+    .hero {
+
+        flex-direction: column-reverse;
+        /* Coloca la imagen arriba y el texto abajo */
+        text-align: center;
+        /* Centra el texto */
+    }
+
+    .hero-texto p {
+
+        margin: auto;
+        /* Centra horizontalmente el párrafo */
+    }
+
+    .botones {
+
+        justify-content: center;
+        /* Centra los botones */
+    }
+
+    .hero-texto h1 {
+
+        font-size: 48px;
+        /* Reduce el tamaño del título principal */
+    }
+
+    .hero-texto h2 {
+
+        font-size: 24px;
+        /* Reduce el tamaño del subtítulo */
+    }
+
+}
+
+/*=========================================RESPONSIVE CELULAR=========================================*/
+
+@media(max-width:768px) {
+    /* Estas reglas se aplican cuando la pantalla mide 768px o menos */
+
+    .menu-icon {
+
+        display: block;
+        /* Muestra el ícono del menú hamburguesa */
+    }
+
+    nav {
+
+        position: absolute;
+        /* Posiciona el menú respecto al header */
+        top: 85px;
+        /* Lo coloca debajo del encabezado */
+        left: 0;
+        /* Lo pega al borde izquierdo */
+        width: 100%;
+        /* Hace que ocupe todo el ancho */
+        background: #0b1120;
+        /* Color de fondo del menú */
+        max-height: 0;
+        /* Inicialmente el menú está cerrado */
+        overflow: hidden;
+        /* Oculta el contenido que sobresale */
+        transition: .4s;
+        /* Hace suave la apertura del menú */
+    }
+
+    nav ul {
+
+        flex-direction: column;
+        /* Coloca las opciones una debajo de otra */
+        text-align: center;
+        /* Centra el texto */
+        gap: 0;
+        /* Elimina la separación entre elementos */
+    }
+
+    nav ul li {
+
+        padding: 18px 0;
+        /* Espacio interno arriba y abajo */
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        /* Agrega una línea divisoria */
+    }
+
+    #menu:checked~nav {
+
+        max-height: 500px;
+        /* Expande el menú cuando el checkbox está marcado */
+    }
+}

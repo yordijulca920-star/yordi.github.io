@@ -1,0 +1,340 @@
+/*=========================================GOOGLE FONTS=========================================*/
+/* tipografia de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================VARIABLES=========================================*/
+:root {
+/*================= PALETA DE COLORES=================*/
+    --principal: #2563eb;/* Color principal del sitio */
+    --secundario: #3b82f6;/* Color secundario */
+    --claro: #ffffff;/* Color blanco */
+    --texto: #d1d5db;/* Color para textos secundarios */
+    --gris: #1e293b;/* Color gris oscuro */
+    --fondo: #0f172a;/* Color de fondo principal */
+    --fondo2: #111827;/* Segundo color de fondo */
+
+}
+
+/*=========================================parte principal=========================================*/
+* {
+    margin: 0;/* Elimina el margen por defecto */
+    padding: 0;/* Elimina el relleno por defecto */
+    box-sizing: border-box;/* Incluye padding y borde dentro del tamaño */
+    font-family: 'Poppins', sans-serif;/* Aplica la fuente Poppins */
+}
+html {
+    scroll-behavior: smooth;/* Hace que el desplazamiento sea suave */
+}
+body {
+    background: var(--fondo);/* Aplica el color de fondo */
+    color: var(--claro);/* Aplica el color del texto */
+}
+img {
+
+    max-width: 100%;/* La imagen nunca será más ancha que su contenedor */
+    display: block;/* Elimina espacios debajo de la imagen */
+
+}
+a{
+    text-decoration: none;/* Quita el subrayado de los enlaces */
+
+}
+ul{
+    list-style: none;/* Elimina los puntos de las listas */
+}
+/*=================HEADER=================*/
+header{
+    backdrop-filter: blur(15px);
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height:85px; /* Altura del encabezado */
+    display:flex; /* Activa Flexbox */
+    justify-content:space-between; /* Separa logo y menú */
+    align-items: center;/* Centra verticalmente los elementos */
+    padding:0 8%;/* Espacio interno a los lados */
+    background:#0b1120a2;/* Color de fondo */
+    position:fixed;/* El header permanece fijo */
+    top:0;/* Lo coloca arriba */
+    left:0;/* Pegado al borde izquierdo */
+    z-index:999;/*orden de apilamiento*/
+    box-shadow:0 3px 12px rgba(0,0,0,.35);/* Agrega una sombra */    
+}
+/*=================LOGO=================*/
+.logo a{
+    color:white;/* Color del texto */
+    font-size:1.8rem;/* Tamaño de la letra */
+    font-weight:700;/* Hace la letra más gruesa */
+}
+.logo a span{
+    color:var(--principal);/* Cambia el color del texto dentro del span */      
+}
+/*=================MENU=================*/
+nav ul{
+    display: flex;/* Coloca los elementos en fila */
+    gap: 35px;/* Espacio entre cada opción del menú */
+}
+nav ul li a{
+    color: white;
+    /* Color del enlace */
+    font-weight: 500;/* Grosor medio de la letra */
+    transition: .3s;/* Hace suave el cambio de color */
+    position: relative;/* Permite posicionar el ::after */
+}
+nav ul li a:hover{
+    color:var(--principal);/* Cambia el color al pasar el mouse */
+}
+nav ul li a::after{
+    content:"";/* Crea un elemento vacío */
+    position:absolute;/* Lo posiciona respecto al enlace */
+    left:0;/* Empieza desde la izquierda */
+    bottom: -6px;/* Lo coloca debajo del texto */
+    width:0;/* Inicialmente no se ve */
+    height:2px;/* Grosor de la línea */
+    background:var(--principal);/* Color de la línea */
+    transition:.3s;/* Hace suave la animación */
+}
+nav ul li a:hover::after{
+    width:100%;/* Hace que la línea aparezca completamente */
+}
+.active{
+    color:var(--principal);/* Marca el enlace activo */
+}
+
+/*=================MENU HAMBURGUESA=================*/
+
+#menu{
+    display:none;/* Oculta el checkbox */
+}
+.menu-icon{
+    display:none;/* Oculta el icono en computadoras */
+    font-size: 30px;/* Tamaño del icono */
+    color:white;/* Color del icono */
+    cursor:pointer;/* Cambia el cursor a una mano */
+}
+
+/*================= HERO=================*/
+
+.hero{
+    background:linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url("img/fondo-portafolio.png");
+    background-size:cover;/* La imagen de fondo cubre todo el contenedor */
+    background-position:center;/* Centra la imagen de fondo */
+    background-repeat: no-repeat;/* Evita que la imagen se repita */
+    background-attachment: fixed;/* La imagen de fondo permanece fija al hacer scroll */
+    width: 100%;/* Ocupa todo el ancho de la pantalla */
+    min-height: 88vh;
+    display: flex;/* Activa Flexbox */
+    justify-content: space-between;/* Separa el texto y la imagen */
+    align-items: center;/* Centra los elementos verticalmente */
+    padding: 130px 8% 80px;/* Espacio interno: arriba, lados e inferior */
+    gap: 60px;/* Espacio entre el texto y la imagen */
+}
+.hero-texto{
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    padding: 45px;
+    max-width: 650px;
+    flex: 1;/* Hace que el texto ocupe una parte del espacio disponible */
+}
+.hero-texto h3{
+    color:var(--principal);/* Color del subtítulo */
+    font-size: 25px;/* Tamaño del subtítulo */
+}
+.hero-texto h1{
+    font-size:60px;/* Tamaño del título principal */
+    margin:15px 0;/* Margen arriba y abajo, sin margen a los lados */
+}
+.hero-texto h2{
+    font-size:24px;/* Tamaño del segundo título */
+    color:var(--texto);/* Color del texto secundario */
+    margin-bottom: 20px;/* Espacio debajo del título */
+}
+.hero-texto p{
+    font-size:18px;/* Tamaño del párrafo */
+    line-height:1.8;/* Espacio entre líneas del texto */
+    max-width: 600px;/* Ancho máximo del párrafo para facilitar la lectura */
+}
+
+/*================= BOTONES=================*/
+.botones{
+    display:flex;/* Coloca los botones uno al lado del otro */
+    gap:20px;/* Espacio entre botones */
+    margin-top: 35px;/* Espacio encima del grupo de botones */
+}
+.btn{
+    background:var(--principal);/* Color de fondo del botón */
+    color:white;/* Color del texto */
+    padding: 15px 35px;/* Espacio interno del botón */
+    border-radius: 10px;/* Bordes redondeados */
+    transition: .4s;/* Hace suave los cambios al pasar el mouse */
+    font-weight: 600;/* Hace el texto más grueso */
+}
+.btn:hover{
+    background:#1d4ed8;/* Cambia el color al pasar el cursor */
+    transform: translateY(-5px);/* Mueve el botón 5px hacia arriba */
+}
+.btn-secundario{
+    border:2px solid var(--principal);/* Agrega un borde del color principal */
+    color:white;/* Color del texto */
+    padding: 15px 35px;/* Espacio interno */
+    border-radius: 10px;/* Bordes redondeados */
+    transition: .4s;/* Suaviza los cambios */
+    font-weight: 600;/* Grosor del texto */
+}
+.btn-secundario:hover{
+    background:var(--principal);/* Colorea el fondo al pasar el cursor */
+    transform: translateY(-5px);/* Eleva el botón */
+}
+/*================= IMAGEN HERO =================*/
+.hero-imagen{
+    flex: 1;/* Ocupa la otra mitad del espacio disponible */
+    display:flex;/* Activa Flexbox */
+    justify-content: center;/* Centra horizontalmente la imagen */
+}
+.foto{
+    width: 330px;/* Ancho del círculo */
+    height: 330px;/* Alto del círculo */
+    border-radius: 50%;/* Convierte el cuadro en un círculo */
+    border:5px solid var(--principal);/* Agrega un borde circular */
+    display:flex;/* Activa Flexbox */
+    justify-content: center;/* Centra el contenido horizontalmente */
+    align-items: center;/* Centra el contenido verticalmente */
+    font-size: 35px;/* Tamaño del texto interno */
+    font-weight:bold;/* Texto en negrita */
+    background:var(--gris);/* Color de fondo */
+    color:white;/* Color del texto */
+    box-shadow:0 0 35px rgba(37, 99, 235,45 );/* Agrega un efecto de brillo alrededor */
+    overflow:hidden;/* Oculta cualquier contenido que sobresalga del círculo */
+}
+
+/*========================================FOOTER=========================================*/
+
+footer {  
+    background: #090f1d;/* Define el color de fondo del pie de página */
+    padding: 45px 8%;/* Agrega espacio interno arriba/abajo y a los lados */
+    text-align: center;/* Centra todo el contenido del footer */
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+footer p {
+    color: var(--texto);/* Color del párrafo */
+    margin-bottom: 25px;/* Espacio debajo del párrafo */
+}
+
+.redes {
+    display: flex;/* Activa Flexbox */
+    justify-content: center;/* Centra los íconos horizontalmente */
+    gap: 25px;/* Espacio entre los íconos */
+    flex-wrap: wrap;/* Permite que los íconos bajen a otra línea si no caben */
+}
+
+.redes a {
+    color: white;/* Color de los íconos */
+    transition: .3s;/* Suaviza el cambio de color */
+}
+
+.redes a:hover {
+    color: var(--principal);/* Cambia el color de los íconos al pasar el cursor */
+}
+
+/*========================================RESPONSIVE TABLET=========================================*/
+
+@media(max-width:992px) {/* Estas reglas se aplican cuando la pantalla mide 992px o menos */
+
+    .hero {
+    flex-direction: column-reverse;/* Coloca la imagen arriba y el texto abajo */
+    text-align: center;/* Centra el texto */
+    }
+
+    .hero-texto p {
+    margin: auto;/* Centra horizontalmente el párrafo */
+    }
+
+    .botones {
+    justify-content: center;/* Centra los botones */
+    }
+
+    .hero-texto h1 {
+    font-size: 48px;/* Reduce el tamaño del título principal */
+    }
+
+    .hero-texto h2 {
+    font-size: 24px;/* Reduce el tamaño del subtítulo */
+    }
+
+}
+
+/*=========================================RESPONSIVE CELULAR=========================================*/
+
+@media(max-width:768px) {/* Estas reglas se aplican cuando la pantalla mide 768px o menos */
+
+    .menu-icon {
+    display: block;/* Muestra el ícono del menú hamburguesa */
+    }
+
+    nav {
+    position: absolute;/* Posiciona el menú respecto al header */
+    top: 85px;/* Lo coloca debajo del encabezado */
+    left: 0;/* Lo pega al borde izquierdo */
+    width: 100%;/* Hace que ocupe todo el ancho */
+    background: #0b1120;/* Color de fondo del menú */
+    max-height: 0;/* Inicialmente el menú está cerrado */
+    overflow: hidden;/* Oculta el contenido que sobresale */
+    transition: .4s;/* Hace suave la apertura del menú */
+    }
+
+    nav ul {
+    flex-direction: column;/* Coloca las opciones una debajo de otra */
+    text-align: center;/* Centra el texto */
+    gap: 0;/* Elimina la separación entre elementos */
+    }
+
+    nav ul li {
+    padding: 18px 0;/* Espacio interno arriba y abajo */
+    border-top: 1px solid rgba(255, 255, 255, .08);/* Agrega una línea divisoria */
+    }
+
+    #menu:checked~nav {
+    max-height: 500px;/* Expande el menú cuando el checkbox está marcado */
+    }
+
+    .hero {
+    padding: 120px 7% 70px;/* Ajusta el espacio interno para celulares */
+    }
+
+    .hero-texto h1 {
+    font-size: 38px;/* Reduce el tamaño del título principal */
+    }
+
+    .hero-texto h2 {
+    font-size: 20px;/* Reduce el tamaño del subtítulo */
+    }
+
+    .hero-texto h3 {
+    font-size: 20px;/* Reduce el tamaño del texto superior */
+    }
+
+    .botones {
+    flex-direction: column;/* Coloca los botones uno debajo del otro */
+    align-items: center;/* Centra los botones */
+    }
+
+    .btn,
+    .btn-secundario {
+    width: 230px;/* Define un ancho fijo */
+    text-align: center;/* Centra el texto del botón */       
+    }
+
+    .foto {
+    width: 250px;/* Reduce el ancho de la imagen */
+    height: 250px;/* Reduce la altura de la imagen */
+    margin-bottom: 30px;/* Agrega espacio debajo de la imagen */
+    }
+
+    .habilidades h2,
+    .proyectos h2 {
+    font-size: 32px;/* Reduce el tamaño de los títulos */
+    }
+
+}
+

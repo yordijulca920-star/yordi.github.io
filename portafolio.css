@@ -1,0 +1,554 @@
+/*=========================================GOOGLE FONTS=========================================*/
+/* tipografia de google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================VARIABLES========================================*/
+:root {
+    /*================= PALETA DE COLORES=================*/
+    --principal: #2563eb;
+    /* Color principal del sitio */
+    --secundario: #3b82f6;
+    /* Color secundario */
+    --claro: #ffffff;
+    /* Color blanco */
+    --texto: #d1d5db;
+    /* Color para textos secundarios */
+    --gris: #1e293b;
+    /* Color gris oscuro */
+    --fondo: #0f172a;
+    /* Color de fondo principal */
+    --fondo2: #111827;
+    /* Segundo color de fondo */
+
+}
+
+/*=========================================parte principal=========================================*/
+* {
+    margin: 0;
+    /* Elimina el margen por defecto */
+    padding: 0;
+    /* Elimina el relleno por defecto */
+    box-sizing: border-box;
+    /* Incluye padding y borde dentro del tamaño */
+    font-family: 'Poppins', sans-serif;
+    /* Aplica la fuente Poppins */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Hace que el desplazamiento sea suave */
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url("img/fondo-sobre-mi.png");
+    /* Aplica un degradado sobre la imagen de fondo */
+    background-size: cover;
+    /* La imagen de fondo cubre todo el contenedor */
+    background-position: center;
+    /* Centra la imagen de fondo */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    background-attachment: fixed;
+    /* La imagen de fondo permanece fija al hacer scroll */
+    color: var(--claro);
+    /* Aplica el color del texto */
+}
+
+img {
+
+    max-width: 100%;
+    /* La imagen nunca será más ancha que su contenedor */
+    display: block;
+    /* Elimina espacios debajo de la imagen */
+
+}
+
+a {
+    text-decoration: none;
+    /* Quita el subrayado de los enlaces */
+
+}
+
+ul {
+    list-style: none;
+    /* Elimina los puntos de las listas */
+}
+
+/*=================HEADER=================*/
+header {
+    backdrop-filter: blur(15px);
+    width: 100%;
+    /* Ocupa todo el ancho de la pantalla */
+    height: 85px;
+    /* Altura del encabezado */
+    display: flex;
+    /* Activa Flexbox */
+    justify-content: space-between;
+    /* Separa logo y menú */
+    align-items: center;
+    /* Centra verticalmente los elementos */
+    padding: 0 8%;
+    /* Espacio interno a los lados */
+    background: #0b1120a2;
+    /* Color de fondo */
+    position: fixed;
+    /* El header permanece fijo */
+    top: 0;
+    /* Lo coloca arriba */
+    left: 0;
+    /* Pegado al borde izquierdo */
+    z-index: 999;
+    /*orden de apilamiento*/
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .35);
+    /* Agrega una sombra */
+}
+
+/*=================LOGO=================*/
+.logo a {
+    color: white;
+    /* Color del texto */
+    font-size: 1.8rem;
+    /* Tamaño de la letra */
+    font-weight: 700;
+    /* Hace la letra más gruesa */
+}
+
+.logo a span {
+    color: var(--principal);
+    /* Cambia el color del texto dentro del span */
+}
+
+/*=================MENU=================*/
+nav ul {
+    display: flex;
+    /* Coloca los elementos en fila */
+    gap: 35px;
+    /* Espacio entre cada opción del menú */
+}
+
+nav ul li a {
+    color: white;
+    /* Color del enlace */
+    font-weight: 500;
+    /* Grosor medio de la letra */
+    transition: .3s;
+    /* Hace suave el cambio de color */
+    position: relative;
+    /* Permite posicionar el ::after */
+}
+
+nav ul li a:hover {
+    color: var(--principal);
+    /* Cambia el color al pasar el mouse */
+}
+
+nav ul li a::after {
+    content: "";
+    /* Crea un elemento vacío */
+    position: absolute;
+    /* Lo posiciona respecto al enlace */
+    left: 0;
+    /* Empieza desde la izquierda */
+    bottom: -6px;
+    /* Lo coloca debajo del texto */
+    width: 0;
+    /* Inicialmente no se ve */
+    height: 2px;
+    /* Grosor de la línea */
+    background: var(--principal);
+    /* Color de la línea */
+    transition: .3s;
+    /* Hace suave la animación */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    /* Hace que la línea aparezca completamente */
+}
+
+.active {
+    color: var(--principal);
+    /* Marca el enlace activo */
+}
+
+/*=================MENU HAMBURGUESA=================*/
+#menu {
+    display: none;
+    /* Oculta el checkbox */
+}
+
+.menu-icon {
+    display: none;
+    /* Oculta el icono en computadoras */
+    font-size: 30px;
+    /* Tamaño del icono */
+    color: white;
+    /* Color del icono */
+    cursor: pointer;
+    /* Cambia el cursor a una mano */
+}
+/*=========================================MAIN=========================================*/
+
+main {
+
+    padding: 130px 8% 90px;
+}
+
+/*=========================================TITULO=========================================*/
+
+.titulo-pagina {
+
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 80px;
+    padding: 60px;
+    text-align: center;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .30);
+    transition: .4s;
+}
+
+.titulo-pagina:hover {
+
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(37, 99, 235, .30);
+}
+
+.titulo-pagina h1 {
+
+    font-size: 55px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.titulo-pagina p {
+
+    max-width: 760px;
+    margin: auto;
+    color: #d1d5db;
+    line-height: 1.9;
+}
+/*=========================================ESTADISTICAS=========================================*/
+
+.estadisticas {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 90px;
+}
+
+.dato {
+
+    padding: 40px;
+    text-align: center;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .30);
+    transition: .4s;
+}
+
+.dato:hover {
+
+    transform: translateY(-10px) scale(1.03);
+    border-color: #3b82f6;
+    box-shadow: 0 20px 45px rgba(37, 99, 235, .35);
+}
+
+.dato h2 {
+
+    font-size: 50px;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.dato p {
+
+    color: #d1d5db;
+    font-size: 17px;
+
+}
+/*=========================================PROYECTOS=========================================*/
+
+.proyectos h2 {
+
+    text-align: center;
+    font-size: 45px;
+    color: #fff;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.proyectos h2::after {
+
+    content: "";
+    width: 90px;
+    height: 4px;
+    background: #3b82f6;
+    display: block;
+    margin: 18px auto;
+    border-radius: 50px;
+}
+
+.contenedor-proyectos {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 35px;
+}
+
+/*=========================================TARJETAS=========================================*/
+
+.proyecto {
+
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .30);
+    transition: .45s;
+}
+
+.proyecto::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+}
+
+.proyecto:hover {
+
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 22px 45px rgba(37, 99, 235, .35);
+}
+
+/*=========================================IMAGEN=========================================*/
+
+.imagen {
+
+    height: 220px;
+    background: linear-gradient(135deg, #16233d, #243b67);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.imagen img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .6s;
+}
+
+.proyecto:hover img {
+
+    transform: scale(1.08);
+}
+/*=========================================CONTENIDO=========================================*/
+
+.proyecto h3 {
+
+    margin: 25px;
+    margin-bottom: 10px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.proyecto p {
+
+    margin: 0 25px;
+    color: #d1d5db;
+    line-height: 1.8;
+}
+
+.proyecto a {
+
+    display: inline-block;
+    margin: 30px 25px;
+    padding: 14px 30px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    font-weight: 600;
+    transition: .4s;
+}
+
+.proyecto a:hover {
+
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, .40);
+}
+
+/*=========================================FOOTER=========================================*/
+
+footer {
+    background: rgba(255, 255, 255, .08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .4s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .25);
+    /* Define el color de fondo del pie de página */
+    padding: 45px 8%;
+    /* Agrega espacio interno arriba/abajo y a los lados */
+    text-align: center;
+    /* Centra todo el contenido del footer */
+    border-top: 1px solid rgba(255, 255, 255, .08);
+}
+
+footer p {
+
+    color: var(--texto);
+    /* Color del párrafo */
+    margin-bottom: 25px;
+    /* Espacio debajo del párrafo */
+}
+
+.redes {
+
+    display: flex;
+    /* Activa Flexbox */
+    justify-content: center;
+    /* Centra los íconos horizontalmente */
+    gap: 25px;
+    /* Espacio entre los íconos */
+    flex-wrap: wrap;
+    /* Permite que los íconos bajen a otra línea si no caben */
+}
+
+.redes a {
+
+    color: white;
+    /* Color de los íconos */
+    transition: .3s;
+    /* Suaviza el cambio de color */
+}
+
+.redes a:hover {
+
+    color: var(--principal);
+    /* Cambia el color de los íconos al pasar el cursor */
+}
+
+.btn-arriba {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    background: var(--principal);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+/*=========================================RESPONSIVE TABLET=========================================*/
+
+@media(max-width:992px) {
+    /* Estas reglas se aplican cuando la pantalla mide 992px o menos */
+
+    .hero {
+
+        flex-direction: column-reverse;
+        /* Coloca la imagen arriba y el texto abajo */
+        text-align: center;
+        /* Centra el texto */
+    }
+
+    .hero-texto p {
+
+        margin: auto;
+        /* Centra horizontalmente el párrafo */
+    }
+
+    .botones {
+
+        justify-content: center;
+        /* Centra los botones */
+    }
+
+    .hero-texto h1 {
+
+        font-size: 48px;
+        /* Reduce el tamaño del título principal */
+    }
+
+    .hero-texto h2 {
+
+        font-size: 24px;
+        /* Reduce el tamaño del subtítulo */
+    }
+
+}
+
+/*=========================================RESPONSIVE CELULAR=========================================*/
+
+@media(max-width:768px) {
+    /* Estas reglas se aplican cuando la pantalla mide 768px o menos */
+
+    .menu-icon {
+
+        display: block;
+        /* Muestra el ícono del menú hamburguesa */
+    }
+
+    nav {
+
+        position: absolute;
+        /* Posiciona el menú respecto al header */
+        top: 85px;
+        /* Lo coloca debajo del encabezado */
+        left: 0;
+        /* Lo pega al borde izquierdo */
+        width: 100%;
+        /* Hace que ocupe todo el ancho */
+        background: #0b1120;
+        /* Color de fondo del menú */
+        max-height: 0;
+        /* Inicialmente el menú está cerrado */
+        overflow: hidden;
+        /* Oculta el contenido que sobresale */
+        transition: .4s;
+        /* Hace suave la apertura del menú */
+    }
+
+    nav ul {
+
+        flex-direction: column;
+        /* Coloca las opciones una debajo de otra */
+        text-align: center;
+        /* Centra el texto */
+        gap: 0;
+        /* Elimina la separación entre elementos */
+    }
+
+    nav ul li {
+
+        padding: 18px 0;
+        /* Espacio interno arriba y abajo */
+        border-top: 1px solid rgba(255, 255, 255, .08);
+        /* Agrega una línea divisoria */
+    }
+
+    #menu:checked~nav {
+
+        max-height: 500px;
+        /* Expande el menú cuando el checkbox está marcado */
+    }
+}
